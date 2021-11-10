@@ -10,7 +10,7 @@ mecab-ipadict/dist/sys.dic: libexec/mecab/mecab-dict-index
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(CURDIR)/libexec/mecab && cd mecab-ipadict && ./configure --with-mecab-config=../mecab/mecab-config --with-dicdir=./dist && make && ../libexec/mecab/mecab-dict-index -f euc-jp -t utf-8 && make install
 
 mecab/src/.libs/libmecab.so:
-	cd mecab && emconfigure ./configure && emmake make -j9 && ls $(CURDIR)/mecab/src/.libs/
+	cd mecab && emconfigure ./configure && emmake make -j9 && echo test && ls $(CURDIR)/mecab/src/.libs/ && echo test 
 
 $(PRODUCTS): mecab-ipadict/dist/sys.dic mecab/src/.libs/libmecab.so build_js.sh
-	@bash -x ./build_js.sh
+	./build_js.sh
