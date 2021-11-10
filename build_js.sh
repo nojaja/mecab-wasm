@@ -1,7 +1,5 @@
 #!/bin/bash
 
-ls mecab/src/.libs/
-
 emcc ${pwd}mecab/src/.libs/libmecab.so -o ${pwd}lib/libmecab.js -g \
     -s MODULARIZE -s EXPORT_ES6=1 -s ENVIRONMENT="web,webview,worker" \
     -s ASSERTIONS=1 -s SAFE_HEAP=1 -s STACK_OVERFLOW_CHECK=1 -s INITIAL_MEMORY=199950336 \
