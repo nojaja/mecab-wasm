@@ -1,0 +1,23 @@
+name: Make and emsdk CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: mymindstorm/setup-emsdk@v9
+    - name: Verify
+      run: emcc -v
+      
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+
+
