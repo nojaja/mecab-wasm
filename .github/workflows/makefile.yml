@@ -26,3 +26,10 @@ jobs:
         name: libs
         path: |
           lib
+
+    - name: Archive production artifacts2
+      uses: actions/upload-artifact@v2
+      with:
+        name: mecab/src/.libs
+        path: |
+          mecab/src/.libs
